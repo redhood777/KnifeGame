@@ -16,6 +16,10 @@ public class tileGenerator : MonoBehaviour
 
     public objectPooler[] pools;
 
+    private enemyGenerator enemyGenerator;
+
+    public float randomEnemyThreshold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,8 @@ public class tileGenerator : MonoBehaviour
             tileHeight = pools[i].pooledObject.GetComponent<BoxCollider2D>().size.y;
 
         }
+
+        enemyGenerator = FindObjectOfType<enemyGenerator>();
     }
 
     // Update is called once per frame
@@ -41,6 +47,12 @@ public class tileGenerator : MonoBehaviour
             newTile.transform.position = transform.position;
             newTile.transform.rotation = transform.rotation;
             newTile.SetActive(true);
+
+            if (Random.Range(0f, 100f) < randomEnemyThreshold)
+            {
+                enemyGenerator.spawnEnemies(new Vector3(transform.position.x, transform.position.y, transform.position.z));
+
+            }
         }
     }
 }

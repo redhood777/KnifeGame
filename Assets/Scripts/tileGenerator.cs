@@ -48,11 +48,11 @@ public class tileGenerator : MonoBehaviour
             newTile.transform.rotation = transform.rotation;
             newTile.SetActive(true);
 
-            if (Random.Range(0f, 100f) < randomEnemyThreshold)
+            /*if (Random.Range(0f, 100f) < randomEnemyThreshold)
             {
                 enemyGenerator.spawnEnemies(new Vector3(transform.position.x, transform.position.y, transform.position.z));
 
-            }
+            }*/
         }
     }
 }

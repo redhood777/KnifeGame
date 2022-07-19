@@ -16,7 +16,7 @@ public class tileGenerator : MonoBehaviour
 
     public objectPooler[] pools;
 
-    private enemyGenerator enemyGenerator;
+    
 
     public float randomEnemyThreshold;
 
@@ -29,7 +29,7 @@ public class tileGenerator : MonoBehaviour
 
         }
 
-        enemyGenerator = FindObjectOfType<enemyGenerator>();
+        
     }
 
     // Update is called once per frame
